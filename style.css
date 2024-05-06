@@ -248,7 +248,7 @@ nav{
 .section-1__container{
   width: 1440px;
   height: 684px;
-  background-image: url(/static/Section1BackgroundImage1.png);
+  background-image: url(static/Section1BackgroundImage1.png);
   background-size: contain;
   animation-name: ChangeBacksForSec1Anim;
   animation-duration: 10s;
@@ -257,19 +257,19 @@ nav{
 
 @keyframes ChangeBacksForSec1Anim{
   0%{
-    background-image: url(/static/Section1BackgroundImage1.png);
+    background-image: url(static/Section1BackgroundImage1.png);
   }
   25%{
-    background-image: url(/static/Section1BackgroundImage2.png);
+    background-image: url(static/Section1BackgroundImage2.png);
   }
   50%{
-    background-image: url(/static/Section1BackgroundImage3.png);
+    background-image: url(static/Section1BackgroundImage3.png);
   }
   75%{
-    background-image: url(/static/Section1BackgroundImage4.jpg);
+    background-image: url(static/Section1BackgroundImage4.jpg);
   }
   100%{
-    background-image: url(/static/Section1BackgroundImage1.png);
+    background-image: url(static/Section1BackgroundImage1.png);
   }
 }
 
