@@ -62,6 +62,7 @@ function Section7SlideTypeOff(N) {
 let section9TextBlocks = document.getElementsByClassName("section-9-code__text")
 let section9VisionButtons = document.getElementsByClassName("section-9-code-vision__button")
 let section9Block = document.getElementsByClassName("section-9__container")[0]
+let section9AllCode = document.getElementsByClassName("section-9-all-code__container")[0]
 
 function Section9VisionTextClick(N) {
 
@@ -89,17 +90,21 @@ function Section9VisionTextClick(N) {
         if (ContainsClick(section9TextBlocks[0]) && ContainsClick(section9TextBlocks[1]))
         {
             section9Block.style.height = "6500px"
+            section9AllCode.style.height = `4100px`
         }
         else if (!ContainsClick(section9TextBlocks[0]) && ContainsClick(section9TextBlocks[1])){
             section9Block.style.height = `${6500 - hei1}px`
+            section9AllCode.style.height = `${4100 - hei1}px`
         }
 
         else if (ContainsClick(section9TextBlocks[0]) && !ContainsClick(section9TextBlocks[1])){
             section9Block.style.height = `${6500 - hei2}px`
+            section9AllCode.style.height = `${4100 - hei2}px`
         }
 
         else{
             section9Block.style.height = `${6500 - hei2 - hei1}px`
+            section9AllCode.style.height = `${4100 - hei2 - hei1}px`
         }
 
         console.log(`${6500 - hei2 - hei1}px`)
@@ -126,17 +131,21 @@ function Section9VisionTextClick(N) {
         if (ContainsClick(section9TextBlocks[0]) && ContainsClick(section9TextBlocks[1]))
         {
             section9Block.style.height = "6500px"
+            section9AllCode.style.height = `4100px`
         }
         else if (!ContainsClick(section9TextBlocks[0]) && ContainsClick(section9TextBlocks[1])){
             section9Block.style.height = `${6500 - hei1}px`
+            section9AllCode.style.height = `${4100 - hei1}px`
         }
 
         else if (ContainsClick(section9TextBlocks[0]) && !ContainsClick(section9TextBlocks[1])){
             section9Block.style.height = `${6500 - hei2}px`
+            section9AllCode.style.height = `${4100 - hei2}px`
         }
 
         else{
             section9Block.style.height = `${6500 - hei2 - hei1}px`
+            section9AllCode.style.height = `${4100 - hei2 - hei1}px`
         }
 
         console.log(section9Block.style.height)
