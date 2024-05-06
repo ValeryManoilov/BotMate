@@ -64,19 +64,90 @@ let section9VisionButtons = document.getElementsByClassName("section-9-code-visi
 let section9Block = document.getElementsByClassName("section-9__container")[0]
 
 function Section9VisionTextClick(N) {
+
+    let Sec9Block1 = document.getElementById("section-9-part-code__container--1")
+    let Sec9Block2 = document.getElementById("section-9-part-code__container--2")   
     if (!section9TextBlocks[N].classList.contains("section-9-click-but"))
     {
+        
         section9TextBlocks[N].style.display = "flex"
         section9TextBlocks[N].style.flexDirection = "row"
         section9TextBlocks[N].style.justufyContent = "center"
         section9TextBlocks[N].style.alignItems = "center"
         section9TextBlocks[N].classList.add("section-9-click-but")
         section9VisionButtons[N].textContent = "Скрыть код"
+
+        section9Block.style.height = "6500px"
+        let hei1 = window.getComputedStyle(section9TextBlocks[0], null).height.slice(0, 4)
+        let hei2 = window.getComputedStyle(section9TextBlocks[1], null).height.slice(0, 4)
+        if (Number(hei1) == NaN){
+            hei1 = window.getComputedStyle(section9TextBlocks[0], null).height.slice(0, 3)
         }
+
+        console.log(hei1, hei2)
+        
+        if (ContainsClick(section9TextBlocks[0]) && ContainsClick(section9TextBlocks[1]))
+        {
+            section9Block.style.height = "6500px"
+        }
+        else if (!ContainsClick(section9TextBlocks[0]) && ContainsClick(section9TextBlocks[1])){
+            section9Block.style.height = `${6500 - hei1}px`
+        }
+
+        else if (ContainsClick(section9TextBlocks[0]) && !ContainsClick(section9TextBlocks[1])){
+            section9Block.style.height = `${6500 - hei2}px`
+        }
+
+        else{
+            section9Block.style.height = `${6500 - hei2 - hei1}px`
+        }
+
+        console.log(`${6500 - hei2 - hei1}px`)
+
+        if (N == 0) {
+            Sec9Block1.style.height = "1117px"
+        }
+        else {
+            Sec9Block2.style.height = "2432px"
+        }
+    }
     else {
         section9TextBlocks[N].style.display = "none"
         section9TextBlocks[N].classList.remove("section-9-click-but")
         section9VisionButtons[N].textContent = "Показать код"
+        let hei1 = window.getComputedStyle(section9TextBlocks[0], null).height.slice(0, 4)
+        let hei2 = window.getComputedStyle(section9TextBlocks[1], null).height.slice(0, 4)
+
+        if (Number(hei1) == NaN){
+            hei1 = window.getComputedStyle(section9TextBlocks[0], null).height.slice(0, 3)
+        }
+        console.log(window.getComputedStyle(section9TextBlocks[0], null).height.slice(0, 3), hei2)
+
+        if (ContainsClick(section9TextBlocks[0]) && ContainsClick(section9TextBlocks[1]))
+        {
+            section9Block.style.height = "6500px"
+        }
+        else if (!ContainsClick(section9TextBlocks[0]) && ContainsClick(section9TextBlocks[1])){
+            section9Block.style.height = `${6500 - hei1}px`
+        }
+
+        else if (ContainsClick(section9TextBlocks[0]) && !ContainsClick(section9TextBlocks[1])){
+            section9Block.style.height = `${6500 - hei2}px`
+        }
+
+        else{
+            section9Block.style.height = `${6500 - hei2 - hei1}px`
+        }
+
+        console.log(section9Block.style.height)
+
+        
+        if (N == 0) {
+            Sec9Block1.style.height = "132px"
+        }
+        else {
+            Sec9Block2.style.height = "132px"
+        }
     }
 }
 
@@ -97,4 +168,11 @@ function Section9CopyCodeClick(N) {
                 section9CopyButtons[N].style.backgroundColor = "#D93223"
             )
         )
+}
+
+function ContainsClick(element){
+    if (element.classList.contains("section-9-click-but")){
+        return true
+    }
+    return false
 }
